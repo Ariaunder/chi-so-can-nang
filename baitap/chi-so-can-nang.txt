@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Tính ch? s? cân nang cua co the</title>
+</head>
+<body>
+	<div class="container">
+		<h2> Ch? s? cân n?ng</h2>
+		<form>
+			Nh?p vào cân nang: <input type="text" name="" id="weight"> <br><br>
+			Nh?p vào chieu cao: <input type="text" name="" id="height">
+		</form>
+		<button onclick="Bmi()">Chi so BMI</button>
+		<p id="bmi" style="color: white"></p>
+
+
+		<script type="text/javascript">
+			function Bmi(){
+				let weight,height;
+				height = Number(document.getElementById("height").value);
+				weight = Number(document.getElementById("weight").value);
+
+				let chisoBMI = 0;
+				chisoBMI = weight/(height*height);
+				if (chisoBMI < 18)
+					// document.write("Underweight");
+					document.getElementById('bmi').innerHTML = ("BMI = "+chisoBMI+ "<br/>"+"Underweight");
+				else if ( chisoBMI < 25.0)
+					// document.write("Normal");
+				    document.getElementById('bmi').innerHTML = ("BMI = "+chisoBMI+ "<br/>"+"Normal");
+				else if (chisoBMI < 30.0)
+					// document.write("Overweight");
+				document.getElementById('bmi').innerHTML   = ("BMI = "+chisoBMI+ "<br/>"+"Overweight");
+				else 
+					// document.write("Obese");
+					document.getElementById('bmi').innerHTML = ("BMI = "+chisoBMI+ "<br/>"+"Obese");
+			}
+		</script>
+	</div>
+</body>
+</html>
